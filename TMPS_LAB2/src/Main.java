@@ -1,6 +1,8 @@
 import Builder.Builders.GiftBoxBuilder;
 import Builder.Director;
 import Builder.GiftBoxes.GiftBox;
+import FactoryMethod.Ship;
+import FactoryMethod.ShippingFactory;
 import Singleton.Singleton;
 import Singleton.Product;
 
@@ -33,5 +35,12 @@ public class Main {
         System.out.println();
         System.out.println("Building Small Giftbox with Builder pattern");
         System.out.println("Box built: \n" + giftBox2.getType() + " " + giftBox2.getColor() + " "+ giftBox2.getTheme() + " " + giftBox2.getContents());
+
+        //Factory method pattern
+        ShippingFactory shippingFactory = new ShippingFactory();
+        Ship ship = shippingFactory.shipOrder("AIR");
+        System.out.println();
+        System.out.println("Shipping orders using Factory method pattern");
+        ship.shipProduct();
     }
 }
