@@ -1,3 +1,7 @@
+import AbstractFactory.ConcreteFactories.AirShippingFactory;
+import AbstractFactory.ConcreteFactories.BoatShippingFactory;
+import AbstractFactory.Factories.Factory;
+import AbstractFactory.Factories.Abstr_Ship;
 import Builder.Builders.GiftBoxBuilder;
 import Builder.Director;
 import Builder.GiftBoxes.GiftBox;
@@ -42,5 +46,15 @@ public class Main {
         System.out.println();
         System.out.println("Shipping orders using Factory method pattern");
         ship.shipProduct();
+
+        //Abstract factory method pattern
+        System.out.println();
+        System.out.println("Shipping and importing orders using Abstract Factory pattern");
+        System.out.println();
+        Factory factory1 = new AirShippingFactory();
+        factory1.shipProduct().shipProduct();
+        factory1.importProduct().importProduct();
+        Factory factory2 = new BoatShippingFactory();
+        factory2.importProduct().importProduct();
     }
 }
