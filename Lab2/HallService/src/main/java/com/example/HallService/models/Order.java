@@ -1,0 +1,22 @@
+package com.example.HallService.models;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
+
+public class Order {
+    private int id;
+    public Order() {
+    }
+
+    @JsonCreator
+    public Order(@JsonProperty("id") int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+}
